@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import os,sys,getopt
+import sys,getopt
 from termcolor import colored
 
 def usage():
@@ -74,8 +74,8 @@ body = body.format(submit_url,method,input_temp)
 template = "<html>\n<head>{}</head>\n<body>{}</body>\n</html>".format(head,body)
 
 if output == "":
-	output = open(os.getcwd()+"/PoC.html","w")
+	output = open("PoC.html","w")
 else:
-	output = open(os.getcwd()+"/"+output+".html","w")
+	output = open(output+".html","w")
 output.write(template)
 output.close()
